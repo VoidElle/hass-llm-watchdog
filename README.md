@@ -1,5 +1,7 @@
 # LLM Watchdog
 
+<p align="center"><img src="custom_components/llm_watchdog/brand/icon.png" alt="LLM Watchdog" width="250"></p>
+
 > Monitor the health of major AI/LLM providers directly from Home Assistant.
 
 LLM Watchdog combines **passive status-page polling** (no API key required) with **optional active API probes** to give you a real-time picture of every AI provider you depend on - all as standard Home Assistant sensor entities.
