@@ -1,0 +1,70 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Seleziona i provider",
+        "description": "Scegli quali provider LLM monitorare.",
+        "data": {
+          "providers": "Provider"
+        }
+      },
+      "api_keys": {
+        "title": "Chiavi API opzionali",
+        "description": "Inserisci le chiavi API per i controlli attivi. Lascia vuoto un provider per usare solo il monitoraggio passivo.",
+        "data": {
+          "openai": "Chiave API OpenAI",
+          "anthropic": "Chiave API Anthropic",
+          "google": "Chiave API Google Gemini",
+          "mistral": "Chiave API Mistral",
+          "cohere": "Chiave API Cohere",
+          "groq": "Chiave API Groq",
+          "perplexity": "Chiave API Perplexity",
+          "stability": "Chiave API Stability AI",
+          "xai": "Chiave API xAI",
+          "meta_llama": "Chiave API Meta/Llama"
+        }
+      },
+      "scan_interval": {
+        "title": "Intervallo di polling",
+        "description": "Imposta ogni quanto verificare lo stato dei provider.",
+        "data": {
+          "scan_interval": "Intervallo di scansione (minuti)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Seleziona i provider",
+        "description": "Scegli quali provider LLM monitorare.",
+        "data": {
+          "providers": "Provider"
+        }
+      },
+      "api_keys": {
+        "title": "Chiavi API opzionali",
+        "description": "Inserisci le chiavi API per i controlli attivi. Lascia vuoto un provider per usare solo il monitoraggio passivo.",
+        "data": {
+          "openai": "Chiave API OpenAI",
+          "anthropic": "Chiave API Anthropic",
+          "google": "Chiave API Google Gemini",
+          "mistral": "Chiave API Mistral",
+          "cohere": "Chiave API Cohere",
+          "groq": "Chiave API Groq",
+          "perplexity": "Chiave API Perplexity",
+          "stability": "Chiave API Stability AI",
+          "xai": "Chiave API xAI",
+          "meta_llama": "Chiave API Meta/Llama"
+        }
+      },
+      "scan_interval": {
+        "title": "Intervallo di polling",
+        "description": "Imposta ogni quanto verificare lo stato dei provider.",
+        "data": {
+          "scan_interval": "Intervallo di scansione (minuti)"
+        }
+      }
+    }
+  }
+}

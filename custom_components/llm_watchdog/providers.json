@@ -1,0 +1,93 @@
+{
+  "openai": {
+    "name": "OpenAI",
+    "statuspage_url": "https://status.openai.com/api/v2/status.json",
+    "active_check": {
+      "url": "https://api.openai.com/v1/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  },
+  "anthropic": {
+    "name": "Anthropic",
+    "statuspage_url": "https://status.anthropic.com/api/v2/status.json",
+    "active_check": {
+      "url": "https://api.anthropic.com/v1/models",
+      "auth_header": "x-api-key",
+      "auth_format": "{key}",
+      "extra_headers": {
+        "anthropic-version": "2023-06-01"
+      }
+    }
+  },
+  "google": {
+    "name": "Google (Gemini)",
+    "active_check": {
+      "url": "https://generativelanguage.googleapis.com/v1/models",
+      "auth_header": null,
+      "auth_format": null,
+      "auth_query_param": "key"
+    }
+  },
+  "mistral": {
+    "name": "Mistral",
+    "statuspage_url": "https://status.mistral.ai/api/v2/status.json",
+    "active_check": {
+      "url": "https://api.mistral.ai/v1/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  },
+  "cohere": {
+    "name": "Cohere",
+    "statuspage_url": "https://status.cohere.com/api/v2/status.json",
+    "active_check": {
+      "url": "https://api.cohere.com/v1/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  },
+  "groq": {
+    "name": "Groq",
+    "statuspage_url": "https://groqstatus.com/api/v2/status.json",
+    "active_check": {
+      "url": "https://api.groq.com/openai/v1/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  },
+  "perplexity": {
+    "name": "Perplexity",
+    "statuspage_url": "https://status.perplexity.ai/api/v2/status.json",
+    "active_check": {
+      "url": "https://api.perplexity.ai/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  },
+  "stability": {
+    "name": "Stability AI",
+    "statuspage_url": "https://status.stability.ai/api/v2/status.json",
+    "active_check": {
+      "url": "https://api.stability.ai/v1/user/account",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  },
+  "xai": {
+    "name": "xAI (Grok)",
+    "active_check": {
+      "url": "https://api.x.ai/v1/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  },
+  "meta_llama": {
+    "name": "Meta/Llama",
+    "active_check": {
+      "url": "https://api.together.xyz/v1/models",
+      "auth_header": "Authorization",
+      "auth_format": "Bearer {key}"
+    }
+  }
+}

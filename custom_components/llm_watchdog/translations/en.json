@@ -1,0 +1,70 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Select providers",
+        "description": "Choose which LLM providers to monitor.",
+        "data": {
+          "providers": "Providers"
+        }
+      },
+      "api_keys": {
+        "title": "Optional API keys",
+        "description": "Provide API keys for active checks. Leave any provider blank to use passive monitoring only.",
+        "data": {
+          "openai": "OpenAI API key",
+          "anthropic": "Anthropic API key",
+          "google": "Google Gemini API key",
+          "mistral": "Mistral API key",
+          "cohere": "Cohere API key",
+          "groq": "Groq API key",
+          "perplexity": "Perplexity API key",
+          "stability": "Stability AI API key",
+          "xai": "xAI API key",
+          "meta_llama": "Meta/Llama API key"
+        }
+      },
+      "scan_interval": {
+        "title": "Polling interval",
+        "description": "Set how often the providers are checked.",
+        "data": {
+          "scan_interval": "Scan interval (minutes)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Select providers",
+        "description": "Choose which LLM providers to monitor.",
+        "data": {
+          "providers": "Providers"
+        }
+      },
+      "api_keys": {
+        "title": "Optional API keys",
+        "description": "Provide API keys for active checks. Leave any provider blank to use passive monitoring only.",
+        "data": {
+          "openai": "OpenAI API key",
+          "anthropic": "Anthropic API key",
+          "google": "Google Gemini API key",
+          "mistral": "Mistral API key",
+          "cohere": "Cohere API key",
+          "groq": "Groq API key",
+          "perplexity": "Perplexity API key",
+          "stability": "Stability AI API key",
+          "xai": "xAI API key",
+          "meta_llama": "Meta/Llama API key"
+        }
+      },
+      "scan_interval": {
+        "title": "Polling interval",
+        "description": "Set how often the providers are checked.",
+        "data": {
+          "scan_interval": "Scan interval (minutes)"
+        }
+      }
+    }
+  }
+}

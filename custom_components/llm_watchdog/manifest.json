@@ -1,0 +1,10 @@
+{
+  "domain": "llm_watchdog",
+  "name": "LLM Watchdog",
+  "codeowners": ["@VoidElle"],
+  "config_flow": true,
+  "documentation": "https://github.com/VoidElle/hass-llm-watchdog",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "0.1.0"
+}
