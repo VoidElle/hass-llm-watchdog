@@ -6,6 +6,18 @@
 
 LLM Watchdog combines **passive status-page polling** (no API key required) with **optional active API probes** to give you a real-time picture of every AI provider you depend on - all as standard Home Assistant sensor entities.
 
+## Documentation 📚
+
+Full documentation is available in the [`docs/`](docs/) directory:
+
+| Page | Description |
+|---|---|
+| [Installation](docs/installation.md) | HACS and manual install |
+| [Configuration](docs/configuration.md) | Provider selection, API keys, polling interval |
+| [Sensors](docs/sensors.md) | Sensor reference, states, attributes |
+| [Automations](docs/automations.md) | Ready-to-use automation examples |
+| [Troubleshooting](docs/troubleshooting.md) | Common issues and debug logging |
+
 ---
 
 ## Supported providers
@@ -98,7 +110,7 @@ The integration creates one sensor per enabled provider plus a summary sensor.
 | `last_checked` | ISO 8601 timestamp of the last update |
 | `message` | Human-readable description from the status page or probe |
 
-### Summary sensor (`sensor.llm_watchdog_summary`)
+### Summary sensor (`sensor.summary`)
 
 A single sensor that aggregates all monitored providers into one state. Useful for dashboards, automations, and notifications — e.g. trigger an alert when any provider goes down.
 
@@ -123,13 +135,13 @@ Extra attributes:
 type: entities
 title: LLM Watchdog
 entities:
-  - entity: sensor.llm_watchdog_summary
+  - entity: sensor.summary
     name: Overall
-  - sensor.llm_watchdog_openai
-  - sensor.llm_watchdog_anthropic
-  - sensor.llm_watchdog_google
-  - sensor.llm_watchdog_mistral
-  - sensor.llm_watchdog_groq
+  - sensor.openai
+  - sensor.anthropic
+  - sensor.google_gemini
+  - sensor.mistral
+  - sensor.groq
 ```
 
 For a grid layout with status badges, use the [custom button-card](https://github.com/custom-cards/button-card):
@@ -139,16 +151,36 @@ type: grid
 columns: 3
 cards:
   - type: custom:button-card
-    entity: sensor.llm_watchdog_openai
+    entity: sensor.openai
     name: OpenAI
     show_state: true
   - type: custom:button-card
-    entity: sensor.llm_watchdog_anthropic
+    entity: sensor.anthropic
     name: Anthropic
     show_state: true
 ```
 
 ---
+
+## Tests 🧪
+
+The test suite lives in `tests/` and uses [`pytest-homeassistant-custom-component`](https://github.com/MatthewFlamm/pytest-homeassistant-custom-component).
+
+### Run tests
+
+```bash
+pip install pytest-homeassistant-custom-component
+pytest tests/ -v
+```
+
+### What is tested
+
+- Sensor creation for each configured provider
+- Combined status logic for all combinations (healthy / degraded / down / unknown)
+- Active probe HTTP status codes (200 / 429 / 500 / timeout)
+- Summary sensor worst-status aggregation
+- Unavailability for API-key-only providers with no key configured
+- Coordinator respects configured scan interval
 
 ## Adding a new provider
 

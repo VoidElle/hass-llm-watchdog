@@ -84,6 +84,12 @@ class LLMWatchdogProviderSensor(CoordinatorEntity[LLMWatchdogCoordinator], Senso
         return STATUS_ICONS.get(self.native_value or STATUS_UNKNOWN, STATUS_ICONS[STATUS_UNKNOWN])
 
     @property
+    def available(self) -> bool:
+        """Return False when the provider has no usable data source."""
+        active_status = self._provider_data.get("active_status")
+        return not (not self._has_statuspage and active_status == STATUS_NOT_CONFIGURED)
+
+    @property
     def extra_state_attributes(self) -> dict[str, Any]:
         """Return provider details."""
         return {
