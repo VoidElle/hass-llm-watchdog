@@ -100,7 +100,15 @@ The integration creates one sensor per enabled provider plus a summary sensor.
 
 ### Summary sensor (`sensor.llm_watchdog_summary`)
 
-Its state is the **worst** status across all monitored providers. Extra attributes:
+A single sensor that aggregates all monitored providers into one state. Useful for dashboards, automations, and notifications — e.g. trigger an alert when any provider goes down.
+
+Its state is the **worst** status across all monitored providers:
+- If even one provider is `down`, the summary is `down`
+- If no provider is `down` but one is `degraded`, the summary is `degraded`
+- If all providers are `healthy`, the summary is `healthy`
+- If no data is available yet, the summary is `unknown`
+
+Extra attributes:
 
 | Attribute | Description |
 |---|---|

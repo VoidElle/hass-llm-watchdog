@@ -18,6 +18,7 @@ from .const import (
     STATUS_DEGRADED,
     STATUS_DOWN,
     STATUS_HEALTHY,
+    STATUS_NOT_CONFIGURED,
     STATUS_UNKNOWN,
 )
 from .coordinator import LLMWatchdogCoordinator
@@ -65,18 +66,22 @@ class LLMWatchdogProviderSensor(CoordinatorEntity[LLMWatchdogCoordinator], Senso
         super().__init__(coordinator)
         self._provider_id = provider_id
         self._provider_name = str(PROVIDERS[provider_id]["name"])
+        self._has_statuspage = bool(PROVIDERS[provider_id].get("statuspage_url"))
         self._attr_unique_id = f"llm_watchdog_{provider_id}"
-        self._attr_name = f"LLM Watchdog {self._provider_name}"
+        self._attr_name = self._provider_name
 
     @property
-    def native_value(self) -> str:
-        """Return the provider combined status."""
+    def native_value(self) -> str | None:
+        """Return the provider combined status, or None if no data source is available."""
+        active_status = self._provider_data.get("active_status")
+        if not self._has_statuspage and active_status == STATUS_NOT_CONFIGURED:
+            return None
         return str(self._provider_data.get("combined_status", STATUS_UNKNOWN))
 
     @property
     def icon(self) -> str:
         """Return an icon based on the current status."""
-        return STATUS_ICONS.get(self.native_value, STATUS_ICONS[STATUS_UNKNOWN])
+        return STATUS_ICONS.get(self.native_value or STATUS_UNKNOWN, STATUS_ICONS[STATUS_UNKNOWN])
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
@@ -103,7 +108,7 @@ class LLMWatchdogSummarySensor(CoordinatorEntity[LLMWatchdogCoordinator], Sensor
     _attr_device_class = SensorDeviceClass.ENUM
     _attr_options = STATUS_OPTIONS
     _attr_unique_id = "llm_watchdog_summary"
-    _attr_name = "LLM Watchdog Summary"
+    _attr_name = "Summary"
 
     @property
     def native_value(self) -> str:
