@@ -27,33 +27,47 @@ Active probes only call free metadata endpoints - **never** completion or genera
 
 ---
 
-## Installation
+## Installation 📦
 
-### Via HACS (recommended)
+### Via HACS (Recommended) ⭐
 
-1. Open **HACS → Integrations** in Home Assistant.
-2. Click the overflow menu (⋮) → **Custom repositories**.
-3. Add `https://github.com/VoidElle/hass-llm-watchdog` as type **Integration**.
-4. Find **LLM Watchdog** in the list and click **Download**.
-5. Restart Home Assistant.
+[![Open in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=VoidElle&repository=hass-llm-watchdog&category=integration)
 
-### Manual
+### Via HACS (Manual)
 
-1. Copy the `custom_components/llm_watchdog/` folder into your HA `config/custom_components/` directory.
-2. Restart Home Assistant.
+1. Add custom repository:
+   - Open HACS in your Home Assistant interface
+   - Go to the **Integrations** tab
+   - Click on the three dots in the top right corner and select **Custom repositories**
+   - Enter the repository URL: `https://github.com/VoidElle/hass-llm-watchdog`
+   - Select **Integration** as the category
+   - Click **Add**
+
+2. Install the integration:
+   - In HACS Integrations, click **+ Explore & Download Repositories**
+   - Search for **LLM Watchdog**
+   - Click on the integration and then **Download**
+   - Select the latest version and click **Download**
+
+3. Restart Home Assistant 🔄
+
+### Manual Installation 🔧
+
+1. Copy the `custom_components/llm_watchdog/` folder into your HA `config/custom_components/` directory
+2. Restart Home Assistant 🔄
 
 ---
 
-## Configuration
+## Add the Integration to Home Assistant 🧩
 
-1. Go to **Settings → Devices & Services → Add Integration**.
-2. Search for **LLM Watchdog** and follow the three-step setup:
+After installing (via HACS or manually) and restarting Home Assistant:
 
-| Step | What you choose |
-|---|---|
-| **1 - Providers** | Which of the 10 providers to monitor (default: all) |
-| **2 - API keys** | Optional key per provider for active probing (blank = passive only) |
-| **3 - Polling interval** | How often to check, in minutes (default: 5, min: 1) |
+1. Go to **Settings → Devices & Services**
+2. Click **+ Add Integration**
+3. Search for **LLM Watchdog**
+4. Select providers to monitor
+5. Optionally enter API keys for active probing
+6. Set the polling interval in minutes (default: 5, min: 1)
 
 To change settings later, go to the integration entry and click **Configure**.
 
