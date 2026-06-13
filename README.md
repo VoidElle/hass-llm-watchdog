@@ -1,6 +1,18 @@
-# LLM Watchdog
-
-<p align="center"><img src="custom_components/llm_watchdog/brand/icon.png" alt="LLM Watchdog" width="250"></p>
+<div align="center">
+  <img src="custom_components/llm_watchdog/brand/icon.png" alt="LLM Watchdog" height="200">
+  <br>
+  <h1>🤖 LLM Watchdog</h1>
+  <p><em>Monitor the health of major AI/LLM providers directly from Home Assistant.</em></p>
+  <br>
+  <a href="https://github.com/VoidElle/hass-llm-watchdog/releases"><img src="https://img.shields.io/github/v/release/VoidElle/hass-llm-watchdog?style=flat-square&label=version" alt="version"></a>
+  <a href="https://github.com/VoidElle/hass-llm-watchdog/blob/main/LICENSE"><img src="https://img.shields.io/github/license/VoidElle/hass-llm-watchdog?style=flat-square" alt="license"></a>
+  <br>
+  <a href="https://hacs.xyz"><img src="https://img.shields.io/badge/HACS-Custom-orange?style=flat-square&logo=home-assistant-community-store" alt="HACS"></a>
+  <a href="https://www.home-assistant.io/"><img src="https://img.shields.io/badge/Home%20Assistant-%E2%89%A52024.1-41BDF5?style=flat-square&logo=home-assistant" alt="Home Assistant"></a>
+  <a href="https://github.com/VoidElle/hass-llm-watchdog/stargazers"><img src="https://img.shields.io/github/stars/VoidElle/hass-llm-watchdog?style=flat-square" alt="stars"></a>
+  <a href="https://github.com/VoidElle/hass-llm-watchdog/commits"><img src="https://img.shields.io/github/last-commit/VoidElle/hass-llm-watchdog?style=flat-square" alt="last commit"></a>
+  <a href="https://github.com/VoidElle/hass-llm-watchdog/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/VoidElle/hass-llm-watchdog/tests.yml?style=flat-square&label=tests" alt="tests"></a>
+</div>
 
 > Monitor the health of major AI/LLM providers directly from Home Assistant.
 
